@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>Details Of Contact Person</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <style>
+            th,td{
+             border: 1px red solid;
+             border-spacing: 5px 1rem;
+            }
+            h1{
+                color: black;
+            }
+            h2{
+                color: red;
+            }
+
+        </style>
+    </head>
+    <body>
+    <h1>Contact Page Information :- </h1>
+    {% if form %}
+      <h2> Show Data :- </h2>
+      <table>
+        <tr>
+            <th>Name</th>
+            <th>Email</th>
+            <th>Phone</th>
+            <th>Description</th>
+        </tr>
+        {% for st in form %}
+        <tr>
+            <td>{{st.name}}</td>
+
+            <td>{{st.Email}}</td>
+            
+            <td>{{st.phone}}</td>
+
+            <td>{{st.desc}}</td>
+
+        </tr>
+        {% endfor %}
+      </table>
+    {% else %}
+      <h1> No Data </h1>
+    {% endif %}
+
+
+    </body>
+</html>
+
+

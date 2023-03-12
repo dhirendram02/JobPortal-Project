@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>Details Of Apply Job </title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <style>
+            th,td{
+             border: 1px red solid;
+             border-spacing: 5px 1rem;
+            }
+            h1{
+              color: black;
+            }
+            h2{
+              color: red;
+            }
+        </style>
+    </head>
+    <body>
+    <h1>Apply Page Information :- </h1>
+    {% if info %}
+      <h2> Show Data :- </h2>
+      <table>
+        <tr>
+            <th>Name</th>
+            <th>Gender</th>
+            <th>Email</th>
+            <th>Phone Number</th>
+            <th>JobType</th>
+            <th>JobRole</th>
+            <th>Location</th>
+            <th>Date</th>
+        </tr>
+        {% for st1 in info %}
+        <tr>
+            <td>{{st1.name}}</td>
+
+            <td>{{st1.gender}}</td>
+            
+            <td>{{st1.Email}}</td>
+
+            <td>{{st1.phone}}</td>
+
+            <td>{{st1.JobType}}</td>
+            
+            <td>{{st1.JobRole}}</td>
+
+            <td>{{st1.Location}}</td>
+
+            <td>{{st1.date}}</td>
+
+        </tr>
+        {% endfor %}
+      </table>
+    {% else %}
+      <h1> No Data </h1>
+    {% endif %}
+  </body>
+</html>
+
+

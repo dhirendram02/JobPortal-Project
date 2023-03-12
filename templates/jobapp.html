@@ -1,0 +1,88 @@
+{% extends 'base.html' %} 
+
+{%block title %} Career {%endblock title%}
+
+{% block body %} 
+
+ <div class="container-fluid px-0 mb-3">
+    <img src="https://thumbs.dreamstime.com/b/businessman-need-job-24702324.jpg" class="d-block w-100"  style="max-width: 100%;" height="500" alt="..." >
+
+    <h1 class="text-center"> Apply For Job :- </h1>
+ </div>
+<div class="container mb-3 py-4">
+  <section class="vh-100" style="background-color: skyblue;">
+    <div class="container h-100">
+    <div class="row d-flex justify-content-center align-items-center h-100">
+      <form method="post" action="/Jobform"> 
+    {% csrf_token %}
+    <div class="mb-3">
+        <label for="name" class="form-label">Name</label>
+        <input type="text" class="form-control" id="name" name="name" placeholder="Enter Your Name">
+      </div>
+      <div class="mb-3">
+        <label for="Email" class="form-label">Email Address</label>
+        <input type="Email" class="form-control" id="Email" name="Email" placeholder="Enter Your Email address">
+    </div>
+      <div class="mb-3">
+        <label for="Phone Number" class="form-label">Phone Number</label>
+        <input type="phone" class="form-control" id="phone" name="phone" placeholder="Enter Your Phone Number">
+      </div>
+      <div class="mb-3">
+        <label>Gender</label>
+          <select name="gender" class="form-control">
+            <option value="" selected>Gender</option>
+            <option value="Male">Male</option>
+            <option value="Female">Female</option>
+            <option value="Transgender">Transgender</option>
+          </select>
+      </div>
+
+      <div class="mb-3">
+        <label>Job Type</label>
+          <select name="JobType" class="form-control">
+            <option value="" selected>Job Type</option>
+            <option value="Full-Time">Full Time</option>
+            <option value="Part-Time">Part Time</option>
+            <option value="Intern">Intern</option>
+            <option value="Freelancer">Freelancer</option>
+            
+          </select>
+      </div>
+
+      <div class="mb-3">
+        <label>Job Role</label>
+          <select name="JobRole" class="form-control">
+            <option value="" selected>JobRole</option>
+            <option value="Software Developer">Software Developer</option>
+            <option value="Python Developer">Python Developer</option>
+            <option value="Web Developer">Web Developer</option>
+            <option value="Data Scientist">Data Scientist</option>
+            <option value="Sr. Data Scientist">Sr. Data Scientist</option>
+            <option value="Product Manager">Product Manager</option>
+            <option value="Software Engineer">Software Engineer</option>
+            <option value="Junior Software Developer">Junior Software Developer</option>
+            <option value="Intern Software Developer">Intern Software Developer</option>
+          </select>
+      </div>
+
+      <div class="mb-3">
+        <label>Location</label>
+        <select name="Location" class="form-control">
+          <option value="" selected>Location</option>
+          <option value="Banglore">Banglore</option>
+          <option value="Delhi">Delhi</option>
+          <option value="Chennai">Chennai</option>
+          <option value="Noida">Noida</option>
+          <option value="Gurugram">Gurugram</option>
+          <option value="Hyderabad">Hyderabad</option>
+          <option value="Pune">Pune</option>
+        </select>
+      </div>
+        <button class="btn btn-primary" type="submit">Submit</button>
+      </div>
+    
+  </div>
+  </div>
+</section>
+</div>
+{% endblock body %}
